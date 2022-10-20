@@ -1,6 +1,6 @@
 # Usage
 
-node .\src\index.js m . /lt /i . . . . . . . + lx
+node ./src/index.js m . /lt /i . . . . . . . + lx
 
 => [ 'merveilleux', 'monoclinaux' ]
 
