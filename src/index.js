@@ -1,18 +1,22 @@
 import { readFile } from 'node:fs/promises'
 
+const verbose = false
+const log = (...p) => {
+    if (verbose) console.log(...p)
+}
+
 const getWordList = async (file, encoding = 'utf8') => {
     const data = await readFile(file, encoding)
     const words = data.trim().split("\n").map(w => w.toLowerCase())
     return words
 }
-
 const main = async () => {
     const words = await getWordList("./wordlist.txt")
     const [_pattern, _extra] = process.argv.slice(2).join(' ').toLowerCase().split('+').map(p => p.trim())
     const pattern = _pattern.split(' ')
     const extra = (_extra || '').split(' ').join('').trim()
 
-    console.log({ pattern, extra })
+    log({ pattern, extra })
 
     const freePositions = pattern.map((g, i) => ({ g, i })).filter(({ g, i }) => {
         return ((g === '.') || (g.startsWith('/')))
@@ -20,7 +24,7 @@ const main = async () => {
 
     const regexpString = pattern.map(g => (g.startsWith('/')) ? (`[^${g.slice(1)}]`) : g).join('')
     const regexp = new RegExp(`^${regexpString}$`)
-    console.log({ regexpString })
+    log({ regexpString })
 
     const possible = words.filter(word => word.match(regexp)).filter(mp => {
         const mpExtraLetters = freePositions.map(freePosition => mp.charAt(freePosition))
