@@ -8,5 +8,8 @@
   },
   "author": "mindcitycode",
   "license": "GNU GPLV3+",
-  "type":"module"
+  "type": "module",
+  "homepage": "https://github.com/mindcitycode/sutom-solve-cli#readme",
+  "url": "https://github.com/mindcitycode/sutom-solve-cli",
+  
 }
