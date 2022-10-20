@@ -8,6 +8,10 @@ node ./src/index.js m . /lt /i . . . . . . . + lx
 
  # License
 
+the GNU GENERAL PUBLIC LICENSE Version 3 is available here:
+
+https://www.gnu.org/licenses/gpl-3.0.txt
+
 french dictionary from wfrench debian package
 
 shttps://packages.debian.org/fr/sid/wfrench
