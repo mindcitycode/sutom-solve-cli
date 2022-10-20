@@ -42,7 +42,6 @@ const main = async () => {
         return ok
     })
     console.log(possible)
-
-
 }
+
 main()
