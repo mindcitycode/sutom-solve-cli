@@ -14,7 +14,7 @@ const main = async () => {
     const words = await getWordList("./wordlist.txt")
     const [_pattern, _extra] = process.argv.slice(2).join(' ').toLowerCase().split('+').map(p => p.trim())
     const pattern = _pattern.split(' ')
-    const extra = (_extra || '').split(' ').join('').trim()
+    const extra = (_extra || '').split(' ').join('').trim().split('')
 
     log({ pattern, extra })
 
@@ -30,7 +30,7 @@ const main = async () => {
         const mpExtraLetters = freePositions.map(freePosition => mp.charAt(freePosition))
         let ok = true
         for (let i = 0; i < extra.length; i++) {
-            const extraLetter = extra.charAt(i)
+            const extraLetter = extra[i]
             const index = mpExtraLetters.indexOf(extraLetter)
             if (index >= 0) {
                 mpExtraLetters.splice(index, 1)
