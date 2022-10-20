@@ -1,7 +1,13 @@
 # Usage
 
- node .\src\index.js f . r . . . . /is /s . +ie
+node .\src\index.js m . /lt /i . . . . . . . + lx
 
-=> [ 'forestiers', 'formalites', 'formidable' ]
+=> [ 'merveilleux', 'monoclinaux' ]
 
  means word must match regexp ^f.r....[^is][^s].$ and include letters i and e anywhere where letter in not specified (negation groups or any char)
+
+ # License
+
+french dictionary from wfrench debian package
+
+shttps://packages.debian.org/fr/sid/wfrench

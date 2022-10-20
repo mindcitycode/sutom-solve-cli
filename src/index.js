@@ -5,13 +5,32 @@ const log = (...p) => {
     if (verbose) console.log(...p)
 }
 
-const getWordList = async (file, encoding = 'utf8') => {
-    const data = await readFile(file, encoding)
-    const words = data.trim().split("\n").map(w => w.toLowerCase())
-    return words
+// dictionaries
+const Dictionaries = {
+    french: {
+        path: 'dict/french',
+        replacements: [
+            ['àâ', 'a'],
+            ['éèêë', 'e'],
+            ['îï', 'e'],
+            ['ôö', 'o'],
+            ['úùûü', 'u'],
+            ['ç', 'c']
+        ]
+    }
 }
+const removeDiacritic = (equivalences, text) => equivalences.reduce((text, [from, to]) => text.replace(new RegExp(`[${from}]`, 'g'), to), text)
+const getWordList = async ({ path, replacements }, encoding = 'utf8') => {
+    const data = (await readFile(path, encoding)).trim().toLowerCase()
+    const words = removeDiacritic(replacements, data).split("\n")
+    return Array.from(new Set(words)) // unique
+}
+
+// solver
 const main = async () => {
-    const words = await getWordList("./wordlist.txt")
+    
+    const words = await getWordList(Dictionaries.french)
+
     const [_pattern, _extra] = process.argv.slice(2).join(' ').toLowerCase().split('+').map(p => p.trim())
     const pattern = _pattern.split(' ')
     const extra = (_extra || '').split(' ').join('').trim().split('')
