@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "mindcitycode",
+  "author": "mindcitycode <mindcity@proton.me>",
   "license": "GNU GPLV3+",
   "type": "module",
   "homepage": "https://github.com/mindcitycode/sutom-solve-cli#readme",
