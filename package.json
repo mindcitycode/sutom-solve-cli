@@ -1,12 +1,12 @@
 {
-  "name": "sutom-solve",
+  "name": "sutom-solve-cli",
   "version": "1.0.0",
   "description": "a command line solver helper for french SUTOM game",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "mindcitycode",
   "license": "GNU GPLV3+",
   "type":"module"
 }
