@@ -1,6 +1,6 @@
 # Usage
 
-npm install sutom-sole-cli
+npm install sutom-solve-cli
 
 npx sutom_sove_cli ./src/index.js m . /lt /i . . . . . . . + lx
 
