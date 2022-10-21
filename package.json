@@ -1,6 +1,6 @@
 {
   "name": "sutom-solve-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a command line solver helper for french SUTOM game",
   "main": "src/index.js",
   "scripts": {
