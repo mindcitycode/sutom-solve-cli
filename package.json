@@ -11,6 +11,8 @@
   "type": "module",
   "homepage": "https://github.com/mindcitycode/sutom-solve-cli#readme",
   "url": "https://github.com/mindcitycode/sutom-solve-cli",
-  "repository": "github:mindcitycode/sutom-solve-cli"
-
+  "repository": "github:mindcitycode/sutom-solve-cli",
+  "bin": {
+    "sutom_solve": "./src/index.js"
+  }
 }
