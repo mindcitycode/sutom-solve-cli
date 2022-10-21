@@ -6,15 +6,20 @@ import { getWordList, Dictionaries } from './dict.js'
 
 const main = async () => {
 
+
     const words = await getWordList(Dictionaries.french, readProjectFile)
 
     const solve = solver(words)
 
-    const [_pattern, _extra] = process.argv.slice(2).join(' ').toLowerCase().split('+').map(p => p.trim())
-    const pattern = _pattern.split(' ')
-    const extra = (_extra || '').split(' ').join('').trim().split('')
+    const regex = /(?<_pattern>[^+-]+)?(\+(?<_extra>[^+-]+))?(\-(?<_forbidden>[^+-]+))?/
+    const parameters = process.argv.slice(2).join(' ').toLowerCase()
+    const { groups: { _pattern, _extra, _forbidden } } = regex.exec(parameters)
 
-    const solutions = solve(pattern, extra)
+    const pattern = (_pattern || '').trim().split(' ')
+    const extra = (_extra || '').trim().split(' ').join('').trim().split('')
+    const forbidden = (_forbidden || '').trim().split(' ').join('').trim().split('')
+
+    const solutions = solve(pattern, extra, forbidden)
 
     console.log(solutions)
 }

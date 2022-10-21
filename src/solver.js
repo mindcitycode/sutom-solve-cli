@@ -3,7 +3,7 @@ const log = (...p) => {
     if (verbose) console.log(...p)
 }
 
-export const solver = words => (pattern, extra) => {
+export const solver = words => (pattern, extra, forbidden) => {
 
     log({ pattern, extra })
 
@@ -13,10 +13,16 @@ export const solver = words => (pattern, extra) => {
 
     const regexpString = pattern.map(g => (g.startsWith('/')) ? (`[^${g.slice(1)}]`) : g).join('')
     const regexp = new RegExp(`^${regexpString}$`)
-    
+
     log({ regexpString })
 
     return words.filter(word => word.match(regexp)).filter(mp => {
+
+        for (let i = 0; i < mp.length; i++) {
+            if (forbidden.includes(mp.charAt(i)))
+                return false
+        }
+
         const mpExtraLetters = freePositions.map(freePosition => mp.charAt(freePosition))
         let ok = true
         for (let i = 0; i < extra.length; i++) {
