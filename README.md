@@ -1,5 +1,7 @@
 # Usage
 
+npm install sutom-sole-cli
+
 npx sutom_sove_cli ./src/index.js m . /lt /i . . . . . . . + lx
 
 => [ 'merveilleux', 'monoclinaux' ]
