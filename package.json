@@ -13,6 +13,6 @@
   "url": "https://github.com/mindcitycode/sutom-solve-cli",
   "repository": "github:mindcitycode/sutom-solve-cli",
   "bin": {
-    "sutom_solve_cli": "./src/index.js",
+    "sutom_solve_cli": "./src/index.js"
   }
 }
