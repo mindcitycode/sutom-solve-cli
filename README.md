@@ -16,4 +16,4 @@ https://www.gnu.org/licenses/gpl-3.0.txt
 
 french dictionary from wfrench debian package
 
-shttps://packages.debian.org/fr/sid/wfrench
+https://packages.debian.org/fr/sid/wfrench
