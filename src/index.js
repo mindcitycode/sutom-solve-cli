@@ -6,8 +6,7 @@ import { getWordList, Dictionaries } from './dict.js'
 
 const main = async () => {
 
-
-    const words = await getWordList(Dictionaries.french, readProjectFile)
+    const words = await getWordList(Dictionaries.sutom, readProjectFile)
 
     const solve = solver(words)
 

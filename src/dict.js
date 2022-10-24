@@ -10,6 +10,11 @@ export const Dictionaries = {
             ['ç', 'c']
         ],
         encoding: 'utf8'
+    },
+    sutom: {
+        path: 'dict/french-sutom',
+        replacements: [],
+        encoding: 'utf8'
     }
 }
 const removeDiacritic = (equivalences, text) => equivalences.reduce((text, [from, to]) => text.replace(new RegExp(`[${from}]`, 'g'), to), text)
