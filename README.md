@@ -15,4 +15,4 @@ npx sutom_sove_cli ./src/index.js m . /lt /i . . . . . . . + lx - a
 
 ## license
 
-sutom-solve-cli is licensed under the GNU GPLV3+ license
+sutom-solve-cli is licensed under the AGPL-3.0-only license

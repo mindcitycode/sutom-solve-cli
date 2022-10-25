@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mindcitycode <mindcity@proton.me>",
-  "license": "GNU GPLV3+",
+  "license": "AGPL-3.0-only",
   "type": "module",
   "homepage": "https://github.com/mindcitycode/sutom-solve-cli#readme",
   "url": "https://github.com/mindcitycode/sutom-solve-cli",
