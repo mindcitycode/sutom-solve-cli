@@ -14,5 +14,6 @@
   "repository": "github:mindcitycode/sutom-solve-cli",
   "bin": {
     "sutom_solve_cli": "./src/index.js"
-  }
+  },
+  "deploymentsExample" : "none"
 }
